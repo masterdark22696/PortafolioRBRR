@@ -1,0 +1,209 @@
+body { 
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0044cc 0%, #001a66 100%);
+    color: white;
+    line-height: 1.6;
+    background-attachment: fixed;
+    background-size: cover;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    background-color: #222;
+    color: white;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.header button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.header button:hover {
+    background-color: #ffcc00;
+    color: black;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ffcc00;
+}
+
+.hero, .about, .projects, .contact {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.profile-img {
+    max-width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 20px 0;
+    object-fit: cover;
+    border: 4px solid #ffcc00;
+    animation: float 3s infinite ease-in-out;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.skill-tag {
+    background-color: #ffcc00;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    transition: transform 0.3s;
+}
+
+.skill-tag:hover {
+    transform: scale(1.1);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: white;
+    perspective: 1000px;
+}
+
+.project-card:hover {
+    transform: scale(1.05) rotateY(5deg);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input, 
+.contact textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    border-color: #ffcc00;
+}
+
+.contact button {
+    background-color: #ffcc00;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact button:hover {
+    background-color: #e6b800;
+    transform: scale(1.1);
+}
+
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ffcc00;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #121212;
+        color: white;
+    }
+    .hero, .about, .projects, .contact {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
